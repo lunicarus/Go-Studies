@@ -8,7 +8,7 @@ import (
 
 func main() {
 	filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
-		fmt.Printf(path)
+		fmt.Println(path)
 		return nil
 	})
 }

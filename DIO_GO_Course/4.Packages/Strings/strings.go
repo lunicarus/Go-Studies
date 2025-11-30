@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(strings.Contains("computador", "dor"))
+	fmt.Println(strings.Contains("computer", "pain"))
 }
