@@ -6,27 +6,27 @@ import (
 )
 
 func main() {
-	c1 := make(chan bool)
-	c2 := make(chan bool)
+	ping := make(chan bool)
+	pong := make(chan bool)
 
 	go func() {
 		for {
-			<-c1
+			<-ping
 			fmt.Println("Ping")
 			time.Sleep(time.Second)
-			c2 <- true
+			pong <- true
 		}
 	}()
 
 	go func() {
 		for {
-			<-c2
+			<-pong
 			fmt.Println("Pong")
 			time.Sleep(time.Second)
-			c1 <- true
+			ping <- true
 		}
 	}()
-	c1 <- true
+	ping <- true
 
 	select {}
 }
