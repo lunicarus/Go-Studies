@@ -19,5 +19,5 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	println(responseData)
+	println(string(responseData))
 }
