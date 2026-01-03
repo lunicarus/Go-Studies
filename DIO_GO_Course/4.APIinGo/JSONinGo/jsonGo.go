@@ -9,19 +9,19 @@ import (
 )
 
 type Users struct {
-	users []User `json:"users"`
+	Users []User `json:"users"`
 }
 
 type User struct {
-	name       string  `json:"name"`
-	occupation string  `json:"occupation"`
-	age        int     `json:"age"`
-	contact    Contact `json:"Contact"`
+	Name       string  `json:"name"`
+	Occupation string  `json:"occupation"`
+	Age        int     `json:"age"`
+	Contact    Contact `json:"Contact"`
 }
 
 type Contact struct {
-	email    string `json:"email"`
-	whatsapp string `json:"whatsapp"`
+	Email    string `json:"email"`
+	Whatsapp string `json:"whatsapp"`
 }
 
 func main() {
@@ -35,8 +35,8 @@ func main() {
 	byteValue, _ := io.ReadAll((jsonFile))
 	json.Unmarshal(byteValue, &users)
 
-	for i := 0; i < len(users.users); i++ {
-		fmt.Println("User name: " + users.users[i].name)
-		fmt.Println("user age: " + strconv.Itoa(users.users[i].age))
+	for i := 0; i < len(users.Users); i++ {
+		fmt.Println("User name: " + users.Users[i].Name)
+		fmt.Println("user age: " + strconv.Itoa(users.Users[i].Age))
 	}
 }
