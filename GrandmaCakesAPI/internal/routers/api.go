@@ -17,19 +17,20 @@ func Register(r chi.Router) {
 		r.Route("/clients", func(r chi.Router) {
 			//public
 			r.Get("/", handlers.ListClients)
-			r.Post("/", handlers.CreateClient)
-			r.Get("/{id}", handlers.GetClient)
-			r.Put("/{id}", handlers.UpdateClient)
-			r.Delete("/{id}", handlers.DeleteClient)
+
 			//protected
 			r.Group(func(r chi.Router) {
 				r.Use(middleware.Auth)
-
+				r.Get("/{id}", handlers.GetClient)
+				r.Post("/", handlers.CreateClient)
+				r.Put("/{id}", handlers.UpdateClient)
+				r.Delete("/{id}", handlers.DeleteClient)
 			})
 		})
+
 		r.Route("/cakes", func(r chi.Router) {
 
-			r.Get("/", handlers.ListClients)
+			r.Get("/", handlers.ListCakes)
 
 			r.Group(func(r chi.Router) {
 				r.Use(middleware.Auth)
