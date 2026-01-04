@@ -16,7 +16,7 @@ type User struct {
 	Name       string  `json:"name"`
 	Occupation string  `json:"occupation"`
 	Age        int     `json:"age"`
-	Contact    Contact `json:"Contact"`
+	Contact    Contact `json:"contacts"`
 }
 
 type Contact struct {
@@ -25,9 +25,10 @@ type Contact struct {
 }
 
 func main() {
-	jsonFile, err := os.Open("usuarios.json")
+	jsonFile, err := os.Open("users.json")
 	if err != nil {
 		fmt.Println(err)
+		os.Exit(1)
 	}
 	fmt.Println("Arquivo aberto com sucesso")
 	defer jsonFile.Close()

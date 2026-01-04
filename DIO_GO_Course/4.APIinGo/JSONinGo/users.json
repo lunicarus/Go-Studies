@@ -5,7 +5,7 @@
             "name": "Maria",
             "occupation": "Writter",
             "age": 30,
-            "Contacts":{
+            "contacts":{
                 "email": "blablabla@bla.com",
                 "whatsapp": "+55 (99) 9999-1111"
             }
