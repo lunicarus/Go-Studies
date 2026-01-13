@@ -42,7 +42,7 @@ func TestShouldDivAndPass(t *testing.T) {
 	}
 }
 func TestShouldDiv0AndFail(t *testing.T) {
-	teste, err := divide(0, 3)
+	teste, err := divide(3, 0)
 
 	if teste != 0 && err != nil {
 		t.Error("Falha ao Gerar Erro de Divisão por 0")
